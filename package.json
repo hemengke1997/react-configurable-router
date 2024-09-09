@@ -1,0 +1,79 @@
+{
+  "name": "react-configurable-router",
+  "version": "0.0.0",
+  "description": "仿 vue-router 的 react 配置式路由，基于 react-router6",
+  "type": "module",
+  "keywords": [
+    "react-router",
+    "react-router-config",
+    "react-config-route",
+    "react route"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemengke1997/react-configurable-router.git"
+  },
+  "author": "hemengke <https://github.com/hemengke1997>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "commitlint": "commitlint -e",
+    "prepare": "simple-git-hooks",
+    "lint": "tsc --noEmit && eslint .",
+    "up": "taze -I -w",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "bump": "bumpp package.json -c --no-push -t --all -x \"npm run changelog\""
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "react-router-dom": ">=6.0.0"
+  },
+  "dependencies": {
+    "context-state": "^3.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.1",
+    "@minko-fe/commitlint-config": "^2.1.2",
+    "@minko-fe/eslint-config": "^4.0.2",
+    "@minko-fe/prettier-config": "^2.2.3",
+    "@minko-fe/tsconfig": "^2.1.1",
+    "@types/clone-deep": "^4.0.4",
+    "bumpp": "^9.5.2",
+    "clone-deep": "^4.0.1",
+    "conventional-changelog-cli": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.10.0",
+    "npm-run-all": "^4.1.5",
+    "p-is-promise": "^4.0.0",
+    "simple-git-hooks": "^2.11.1",
+    "taze": "^0.16.7",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npm run commitlint",
+    "pre-commit": "npm run lint"
+  },
+  "commitlint": {
+    "extends": [
+      "@minko-fe/commitlint-config"
+    ]
+  },
+  "prettier": "@minko-fe/prettier-config"
+}
