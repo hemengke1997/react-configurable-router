@@ -1,6 +1,6 @@
 {
   "name": "react-configurable-router",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "仿 vue-router 的 react 配置式路由，基于 react-router6",
   "type": "module",
   "keywords": [
