@@ -127,3 +127,7 @@ interface RouterProps {
   basename?: string
 }
 ```
+
+## 更多
+
+- [vite-plugin-remix-flat-routes](https://github.com/hemengke1997/vite-plugin-remix-flat-routes)：基于 remix-flat-routes 的 vite 插件，约定式路由
