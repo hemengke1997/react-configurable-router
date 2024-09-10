@@ -1,3 +1,10 @@
 {
-  "extends": "@minko-fe/tsconfig/tsconfig.lib"
+  "extends": "@minko-fe/tsconfig/tsconfig.lib",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./submodule/src/client/*"]
+    }
+  },
+  "exclude": ["submodule", "dist", "node_modules"]
 }

@@ -1,0 +1,3 @@
+[submodule "submodule"]
+	path = submodule
+	url = https://github.com/hemengke1997/vite-plugin-remix-flat-routes.git
