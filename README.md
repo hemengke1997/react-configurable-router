@@ -1,6 +1,6 @@
 # react-configurable-router
 
-> 仿 vue-router 的 react 配置式路由，基于 react-router6
+> 仿 vue-router 的 react 配置式路由，基于 react-router6，额外支持了路由元信息、路由懒加载等功能
 
 ## 使用
 
@@ -128,6 +128,6 @@ interface RouterProps {
 }
 ```
 
-## 更多
+## 相关
 
-- [vite-plugin-remix-flat-routes](https://github.com/hemengke1997/vite-plugin-remix-flat-routes)：基于 remix-flat-routes 的 vite 插件，约定式路由
+- [vite-plugin-remix-flat-routes](https://github.com/hemengke1997/vite-plugin-remix-flat-routes): 基于 remix-flat-routes 约定式路由，支持 react-router6 数据路由

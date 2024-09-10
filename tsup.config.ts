@@ -1,15 +1,35 @@
-import { defineConfig } from 'tsup'
+import { defineConfig, type Options } from 'tsup'
+import { bundleless } from 'tsup-plugin-bundleless'
 
-export const tsup = defineConfig((option) => ({
-  entry: ['src/index.ts'],
-  target: 'node16',
-  dts: true,
-  clean: !option.watch,
-  format: ['cjs', 'esm'],
-  platform: 'node',
-  splitting: false,
-  treeshake: true,
-  minify: false,
-  sourcemap: !!option.watch,
-  tsconfig: option.watch ? 'tsconfig.dev.json' : 'tsconfig.json',
-}))
+const commonConfig = (option: Options): Options => {
+  return {
+    entry: ['./src/**/*.{ts,tsx}'],
+    outDir: 'dist',
+    clean: false,
+    sourcemap: !!option.watch,
+    dts: true,
+    minify: false,
+    external: [/^virtual:.*/, 'react', 'react-dom', 'react-router-dom'],
+    shims: true,
+    treeshake: true,
+    splitting: false,
+    tsconfig: option.watch ? 'tsconfig.dev.json' : 'tsconfig.json',
+  }
+}
+
+export default defineConfig((option) => [
+  {
+    ...commonConfig(option),
+    format: ['esm'],
+    platform: 'neutral',
+    outExtension: () => ({ js: '.js' }),
+    plugins: [bundleless({ ext: '.js' })],
+  },
+  {
+    ...commonConfig(option),
+    format: ['cjs'],
+    platform: 'node',
+    outExtension: () => ({ js: '.cjs' }),
+    plugins: [bundleless({ ext: '.cjs' })],
+  },
+])

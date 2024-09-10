@@ -31,7 +31,7 @@
   "sideEffects": false,
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup",
+    "build": "rm -rf dist && tsup",
     "commitlint": "commitlint -e",
     "prepare": "simple-git-hooks",
     "lint": "tsc --noEmit && eslint .",
@@ -64,6 +64,7 @@
     "simple-git-hooks": "^2.11.1",
     "taze": "^0.16.7",
     "tsup": "^8.2.4",
+    "tsup-plugin-bundleless": "^0.4.0",
     "typescript": "^5.5.4"
   },
   "simple-git-hooks": {
